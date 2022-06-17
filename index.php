@@ -1,8 +1,8 @@
 <?php
 
     $con = mysqli_connect('localhost','root');
-    mysqli_select_db($con,'ecommerce');
-    $sql = "SELECT * FROM products WHERE featured=2";
+    mysqli_select_db($con,'ecommerce1');
+    $sql = "SELECT * FROM product WHERE featured=1";
     $featured = $con->query($sql);
 
 ?>
@@ -50,7 +50,7 @@
 </nav>
 <div class="col-md-2">
     <div class="col-md-8">
-        <h2 class="text-center">Top Products</h2> <br> <br>
+        <h2 class="text-center">Top Products</h2> <br> <br></div>
         <?php
             while($product = mysqli_fetch_assoc($featured)):
         ?>
@@ -62,7 +62,7 @@
                 <button type="button" class="btn btn-success" data-toggle="model" data-target="#details-1">More</button>
             </a>
         </div>
-        <?php endwhile;?>
+        <?php endwhile; ?>
 </div>
 </div>
 </body>
